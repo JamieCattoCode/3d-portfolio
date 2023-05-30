@@ -1,0 +1,11 @@
+Model Information:
+* title:	Lost Alien Technology
+* source:	https://sketchfab.com/3d-models/lost-alien-technology-c56fc34b2bd74b098b7ea68b6bcf215c
+* author:	Citron Legacy (https://sketchfab.com/CitronLegacy)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Lost Alien Technology" (https://sketchfab.com/3d-models/lost-alien-technology-c56fc34b2bd74b098b7ea68b6bcf215c) by Citron Legacy (https://sketchfab.com/CitronLegacy) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
