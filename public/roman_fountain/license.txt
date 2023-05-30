@@ -1,0 +1,11 @@
+Model Information:
+* title:	Roman Fountain and Mosaic - free game asset
+* source:	https://sketchfab.com/3d-models/roman-fountain-and-mosaic-free-game-asset-7b0921d7f4bb4511a96033e8704aa83b
+* author:	Andy Woodhead (https://sketchfab.com/Andywoodhead)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Roman Fountain and Mosaic - free game asset" (https://sketchfab.com/3d-models/roman-fountain-and-mosaic-free-game-asset-7b0921d7f4bb4511a96033e8704aa83b) by Andy Woodhead (https://sketchfab.com/Andywoodhead) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
