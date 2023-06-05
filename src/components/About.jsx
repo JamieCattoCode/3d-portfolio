@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { styles } from '../styles';
 import { services } from '../constants';
 import { fadeIn, textVariant } from '../utils/motion';
+import { SectionWrapper } from '../hoc';
 
 const ServiceCard = ({ index, title, icon }) => {
   return (
@@ -48,7 +49,7 @@ const About = () => {
         I pride myself in my passion for learning and challenging myself to grow. I do not get overwhelmed as a beginner, as I know
         the path to mastery must always start with apprenticeship.
       </motion.p>
-      <div className="mt-20 flex flex-wrap gap-10">
+      <div className="mt-20 flex flex-wrap gap-10 justify-center">
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
@@ -57,4 +58,7 @@ const About = () => {
   )
 }
 
-export default About
+const AboutWrapped = SectionWrapper(
+  About, 'about');
+
+export default AboutWrapped;

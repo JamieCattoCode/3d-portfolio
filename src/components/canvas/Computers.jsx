@@ -28,7 +28,7 @@ const Computers = ({ isMobile }) => {
       <primitive
         object={romanFountain.scene}
         scale={isMobile ? 0.005 : 0.01}
-        position={isMobile ? [-0.5, -1.5, -1.5] : [0, -2.5, -1.5]}
+        position={isMobile ? [-2, -1.5, -1.5] : [-1.6, -2.5, -1.5]}
         rotation={[0.1, 0.1, -0.1]} />
     </mesh>
   )
@@ -57,7 +57,7 @@ const ComputerCanvas = () => {
     <Canvas
       frameloop="demand"
       shadows
-      camera={{ position: [20, 3, 5], fov: 25 }}
+      camera={{ position: isMobile ? [15, 3, 8] : [20, 3, 5], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
       >
         <Suspense 
@@ -66,7 +66,7 @@ const ComputerCanvas = () => {
           <OrbitControls 
             enableZoom={false}
             maxPolarAngle={Math.PI / 2}
-            minPolarAngle={Math.PI / 2} 
+            minPolarAngle={isMobile ? Math.PI / 2 : Math.PI / 3} 
           />
           <Computers isMobile={isMobile} />
         </Suspense>
