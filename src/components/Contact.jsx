@@ -40,8 +40,8 @@ const Contact = () => {
       TEMPLATE_ID, 
       {
         from_name: form.name,
-        to_name: 'Jamie',
         from_email: form.email,
+        to_name: 'Jamie',
         to_email: 'jamie@jmtcodes.com',
         message: form.message
       },
@@ -64,7 +64,7 @@ const Contact = () => {
   };
 
   return (
-    <div className='xl:mt-12 xl:flex-row flex-column-reverse flex gap-10 overflow-hidden'>
+    <div className='xl:mt-12 xl:flex-row flex-column-reverse flex gap-10 overflow-hidden z-10'>
       <motion.div
         variants={slideIn('left', 'tween', 0.2, 1)}
         className="flex-[0.75] bg-black-100 p-8 rounded-2xl"  

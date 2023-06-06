@@ -198,6 +198,7 @@ const projects = [
     name: "Travel Bucket List",
     description:
       "A web app to help you get the most out of your holidays - type in a place name to find lesser-known things to do and places to see.",
+    extendedDescription: 'This project was created as the final project in my web development bootcamp. It is my most complex project to date, including our own REST API, Postgres database, user authentication system, a variety of external API calls and JSON data handling, as well as an MUI-based frontend. Not only did I get to consolidate my knowledge of these technologies, but also I learnt the importance of version control and working as a team.',
     tags: [
       {
         name: "react",
@@ -213,49 +214,7 @@ const projects = [
       },
     ],
     image: tbl,
-    source_code_link: "https://github.com/JamieCattoCode",
-  },
-  {
-    name: "Job IT",
-    description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "restapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "scss",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: jobit,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "Trip Guide",
-    description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-    tags: [
-      {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "supabase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/JamieCattoCode/travel-bucket-list-v2",
   },
 ];
 
