@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
+import { Backdrop, Paper } from "@mui/material";
 
 import { styles } from "../styles";
 import { github } from "../assets";
@@ -8,9 +10,33 @@ import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 
 const ProjectCard = ({ project, index }) => {
-  const { name, description, tags, image, source_code_link } = project;
-  console.log(image);
-  console.log(description)
+  const { name, description, extendedDescription, tags, image, source_code_link } = project;
+
+  const [cardOpen, setCardOpen] = useState(false);
+
+  const disableScrolling = () => {
+    const topScroll = window.pageYOffset || document.documentElement.scrollTop;
+    const leftScroll = window.pageXOffset || document.documentElement.scrollLeft;
+
+    window.onscroll = () => {
+      window.scrollTo(leftScroll, topScroll);
+    };
+  }
+
+  const enableScrolling = () => {
+    window.onscroll = () => {};
+  }
+
+  const handleCardOpen = () => {
+    setCardOpen(true);
+    disableScrolling();
+  }
+
+  const handleCardClose = () => {
+    setCardOpen(false);
+    enableScrolling();
+  }
+
   return (
     <motion.div variants={fadeIn('up', 'string', index*0.5, 0.75)}>
       <Tilt
@@ -38,6 +64,14 @@ const ProjectCard = ({ project, index }) => {
                 className="w-1/2 h-1/2 object-contain"
               />
             </div>
+            <div
+              onClick={handleCardOpen}
+              className="black-gradient w-10 h-10 rounded-full justify-center items-center flex cursor-pointer"
+            >
+              <h1 className="w-1/2 h-1/2 text-[20px] text-center mb-5">
+                ...
+              </h1>
+            </div>
           </div>
         </div>
 
@@ -54,6 +88,15 @@ const ProjectCard = ({ project, index }) => {
           ))}
         </div>
       </Tilt>
+      <Backdrop
+        open={cardOpen}
+        onClick={handleCardClose}
+      >
+        <div className="box-border bg-black-100 text-white w-[450px] text-center p-7 z-50 shadow-xl rounded-xl">
+          <h4 className="text-white font-bold text-[24px]">{name}</h4>
+          <p className="text-sm mt-3">{extendedDescription}</p>
+        </div>
+      </Backdrop>
     </motion.div>
   )
 }
