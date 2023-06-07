@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
-import { Backdrop, Paper } from "@mui/material";
+import { Backdrop } from "@mui/material";
 
 import { styles } from "../styles";
 import { github } from "../assets";
@@ -88,13 +88,14 @@ const ProjectCard = ({ project, index }) => {
           ))}
         </div>
       </Tilt>
+
       <Backdrop
         open={cardOpen}
         onClick={handleCardClose}
       >
-        <div className="box-border bg-black-100 text-white w-[450px] text-center p-7 z-50 shadow-xl rounded-xl">
+        <div className="box-border bg-[#1a2767] w-[450px] text-center p-7 z-50 shadow-2xl rounded-xl">
           <h4 className="text-white font-bold text-[24px]">{name}</h4>
-          <p className="text-sm mt-3">{extendedDescription}</p>
+          <p className="text-sm text-secondary mt-3">{extendedDescription}</p>
         </div>
       </Backdrop>
     </motion.div>
