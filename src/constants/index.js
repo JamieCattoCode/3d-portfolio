@@ -19,11 +19,9 @@ import {
   starbucks,
   tesla,
   shopify,
-  carrent,
-  jobit,
-  tripguide,
   threejs,
-  tbl
+  tbl,
+  reactClone
 } from "../assets";
 
 export const navLinks = [
@@ -205,7 +203,7 @@ const projects = [
         color: "blue-text-gradient",
       },
       {
-        name: "postgres",
+        name: "postgresSQL",
         color: "green-text-gradient",
       },
       {
@@ -215,6 +213,23 @@ const projects = [
     ],
     image: tbl,
     source_code_link: "https://github.com/JamieCattoCode/travel-bucket-list-v2",
+  },
+  {
+    name: "Mini React Clone",
+    description: "A mini recreation of the React library - including rendering, useState, useEffect, and useMemo hooks.",
+    extendedDescription: "I created this to explore the React docs and get a deeper, lower-level understanding of the library I use so much. At the moment, it does not include JSX; I created this version to focus on hooks.",
+    tags: [
+      {
+        name: "javascript",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "html5",
+        color: "green-text-gradient",
+      },
+    ],
+    image: reactClone,
+    source_code_link: "https://github.com/JamieCattoCode/react-clone",
   },
 ];
 

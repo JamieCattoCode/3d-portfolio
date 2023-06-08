@@ -27,9 +27,7 @@ import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
 
 import tbl from './tbl-search-results.png';
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+import reactClone from './react-clone.png';
 
 export {
   logo,
@@ -57,8 +55,6 @@ export {
   shopify,
   starbucks,
   tesla,
-  carrent,
-  jobit,
-  tripguide,
-  tbl
+  tbl,
+  reactClone
 };

@@ -9,34 +9,13 @@ import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 
-const ProjectCard = ({ project, index }) => {
+const ProjectCard = ({ project, index, handleCardOpen }) => {
   const { name, description, extendedDescription, tags, image, source_code_link } = project;
 
-  const [cardOpen, setCardOpen] = useState(false);
-
-  const disableScrolling = () => {
-    const topScroll = window.pageYOffset || document.documentElement.scrollTop;
-    const leftScroll = window.pageXOffset || document.documentElement.scrollLeft;
-
-    window.onscroll = () => {
-      window.scrollTo(leftScroll, topScroll);
-    };
+  const openCardOnClick = () => {
+    handleCardOpen(index);
   }
-
-  const enableScrolling = () => {
-    window.onscroll = () => {};
-  }
-
-  const handleCardOpen = () => {
-    setCardOpen(true);
-    disableScrolling();
-  }
-
-  const handleCardClose = () => {
-    setCardOpen(false);
-    enableScrolling();
-  }
-
+  
   return (
     <motion.div variants={fadeIn('up', 'string', index*0.5, 0.75)}>
       <Tilt
@@ -46,28 +25,28 @@ const ProjectCard = ({ project, index }) => {
           scale: 1,
           speed: 450,
         }}
-      >
+        >
         <div className="relative w-full h-[230px]">
           <img 
             src={image} 
             alt={name}
             className="w-full h-full object-cover rounded-2xl"
-          />
+            />
           <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
             <div
               onClick={() => window.open(source_code_link, '__blank')}
               className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
-            >
+              >
               <img 
                 src={github}
                 alt="github"
                 className="w-1/2 h-1/2 object-contain"
-              />
+                />
             </div>
             <div
-              onClick={handleCardOpen}
+              onClick={openCardOnClick}
               className="black-gradient w-10 h-10 rounded-full justify-center items-center flex cursor-pointer"
-            >
+              >
               <h1 className="w-1/2 h-1/2 text-[20px] text-center mb-5">
                 ...
               </h1>
@@ -88,21 +67,52 @@ const ProjectCard = ({ project, index }) => {
           ))}
         </div>
       </Tilt>
+    </motion.div>
+  )
+}
 
-      <Backdrop
-        open={cardOpen}
-        onClick={handleCardClose}
-      >
+const AdditionalInfoCard = ({ index, name, extendedDescription, cardOpen, handleCardClose }) => {
+  console.log(index, cardOpen)
+  return (
+    <Backdrop
+      open={(cardOpen.index === index) && cardOpen.open}
+      onClick={handleCardClose}
+    >
         <div className="box-border bg-[#1a2767] w-[450px] text-center p-7 z-50 shadow-2xl rounded-xl">
           <h4 className="text-white font-bold text-[24px]">{name}</h4>
           <p className="text-sm text-secondary mt-3">{extendedDescription}</p>
         </div>
       </Backdrop>
-    </motion.div>
   )
 }
 
 const Works = () => {
+  const [cardOpen, setCardOpen] = useState({ index: null, open: false });
+  
+  const disableScrolling = () => {
+    const topScroll = window.pageYOffset || document.documentElement.scrollTop;
+    const leftScroll = window.pageXOffset || document.documentElement.scrollLeft;
+  
+    window.onscroll = () => {
+      window.scrollTo(leftScroll, topScroll);
+    };
+  }
+  
+  const enableScrolling = () => {
+    window.onscroll = () => {};
+  }
+  
+  const handleCardOpen = (cardIndex) => {
+    console.log('Changing state')
+    setCardOpen({ index: cardIndex, open: true });
+    disableScrolling();
+  }
+  
+  const handleCardClose = () => {
+    setCardOpen({ index: null, open: false });
+    enableScrolling();
+  }
+
   return (
     <>
       <motion.div variants={textVariant()}>
@@ -128,6 +138,19 @@ const Works = () => {
             key={`project-${index}`}
             project={project}
             index={index}
+            handleCardOpen={handleCardOpen}
+          />
+        ))}
+      </div>
+      <div>
+        {projects.map((project, index) => (
+          <AdditionalInfoCard 
+            index={index}
+            key={`addinfo-${index}`}
+            name={project.name}
+            extendedDescription={project.extendedDescription}
+            cardOpen={cardOpen}
+            handleCardClose={handleCardClose}
           />
         ))}
       </div>
