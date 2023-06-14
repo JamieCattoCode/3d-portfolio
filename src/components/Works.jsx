@@ -78,7 +78,7 @@ const AdditionalInfoCard = ({ index, name, extendedDescription, cardOpen, handle
       open={(cardOpen.index === index) && cardOpen.open}
       onClick={handleCardClose}
     >
-        <div className="box-border bg-[#1a2767] w-[450px] text-center p-7 z-50 shadow-2xl rounded-xl">
+        <div className="box-border bg-[#1a2767] min-h-[250px] w-[450px] text-center p-7 z-50 shadow-2xl rounded-xl">
           <h4 className="text-white font-bold text-[24px]">{name}</h4>
           <p className="text-sm text-secondary mt-3">{extendedDescription}</p>
         </div>

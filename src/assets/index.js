@@ -28,6 +28,7 @@ import tesla from "./company/tesla.png";
 
 import tbl from './tbl-search-results.png';
 import reactClone from './react-clone.png';
+import chatApp from './chat-app.png';
 
 export {
   logo,
@@ -56,5 +57,6 @@ export {
   starbucks,
   tesla,
   tbl,
-  reactClone
+  reactClone,
+  chatApp
 };

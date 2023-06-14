@@ -14,7 +14,8 @@ import {
   figma,
   docker,
   tbl,
-  reactClone
+  reactClone,
+  chatApp
 } from "../assets";
 
 export const navLinks = [
@@ -110,7 +111,7 @@ const projects = [
         color: "green-text-gradient",
       },
       {
-        name: "mui",
+        name: "express",
         color: "pink-text-gradient",
       },
     ],
@@ -120,7 +121,7 @@ const projects = [
   {
     name: "Mini React Clone",
     description: "A mini recreation of the React library - including rendering, useState, useEffect, and useMemo hooks.",
-    extendedDescription: "I created this to explore the React docs and get a deeper, lower-level understanding of the library I use so much. At the moment, it does not include JSX; I created this version to focus on hooks.",
+    extendedDescription: "I created this to explore the React docs and get a deeper, lower-level understanding of the library I use so much. The main branch is a recreation of the main React hooks, whereas the jsx branch is focused on the Virtual DOM and how elements are rendered.",
     tags: [
       {
         name: "javascript",
@@ -134,6 +135,23 @@ const projects = [
     image: reactClone,
     source_code_link: "https://github.com/JamieCattoCode/react-clone",
   },
+  {
+    name: "Messaging App",
+    description: "A messaging app where users can create accounts, and speak to each other with in live chatrooms.",
+    extendedDescription: "This was made to understand the creation of chat functionalities. I'm currently working on a project which has a chat feature, so I created this as a simple chat which I can use as a baseline.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "chatengine.io",
+        color: "green-text-gradient",
+      },
+    ],
+    image: chatApp,
+    source_code_link: "https://github.com/JamieCattoCode/chat-app"
+  }
 ];
 
 export { services, technologies, projects };
